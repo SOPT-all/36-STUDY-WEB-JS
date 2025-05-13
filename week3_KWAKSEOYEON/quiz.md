@@ -1,10 +1,48 @@
-1. 다음 중 HTTP/1.1과 HTTP/2.0의 차이점으로 옳은 것을 모두 고르세요.
+## Q1. 다음 코드의 출력 결과는 무엇이며, 그 이유는 무엇일까요?
 
-A. HTTP/1.1은 커넥션당 여러 요청을 동시에 처리할 수 있다.
-B. HTTP/2.0은 리소스를 동시에 전송할 수 있어 로딩 속도가 개선된다.
-C. HTTP/1.1은 요청과 응답이 순차적으로 처리된다.
-D. HTTP/2.0은 DOM과 CSSOM을 동시에 생성할 수 있다.
+```jsx
+const obj = {
+  value: 42,
+  print: function () {
+    const inner = function () {
+      console.log(this.value);
+    };
+    inner();
+  },
+};
 
-2. **렌더 트리(Render Tree)**는 어떻게 만들어지며, 어떤 작업에 사용되나요?
-3. 그리고 리플로우와 리페인트가 각각 언제 발생하는지 설명하세요.
-4. DOM에서 DocumentFragment를 사용하는 이유는 무엇인가요?
+obj.print();
+```
+
+## Q2. 다음 중 `this`가 생성자 함수가 생성할 인스턴스를 바인딩하는 경우는 언제일까요?
+
+A. 일반 함수 호출
+B. 객체의 메서드 호출
+C. `new` 키워드를 사용한 생성자 함수 호출
+D. 콜백 함수 내부에서 호출
+
+## Q3. 다음 중 **실행 컨텍스트가 새로 생성되는 순간**은 언제일까요?
+
+A. 변수 선언문이 실행될 때
+B. 함수가 정의될 때
+C. 함수가 호출될 때
+D. if 문이 실행될 때
+
+## Q4. 다음 코드의 출력 결과는 무엇이며, 그 이유는 무엇일까요?
+
+```jsx
+function makeCounter() {
+  let count = 0;
+  return function () {
+    count++;
+    console.log(count);
+  };
+}
+
+const counter1 = makeCounter();
+counter1();
+counter1();
+
+const counter2 = makeCounter();
+counter2();
+```
